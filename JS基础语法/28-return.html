@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getResult() {
+            return 666;
+        }
+        getResult();
+        console.log(getResult());
+
+        function getSum(num1, num2) {
+            return num1 + num2;
+        }
+        console.log(getSum(1, 2));
+
+        function max(a, b) {
+            /*       if (a > b) return a;
+                  else return b; */
+            return a > b ? a : b;
+        }
+        console.log(max(2, 6));
+
+        function getArrayMax(arr) {
+            var max = arr[0];
+            for (var i = 0; i < arr.length; i++) {
+                if (max < arr[i]) {
+                    max = arr[i]
+                }
+            }
+            return max;
+        }
+        var arr = [5, 2, 99, 101, 67, 77, 143];
+        var re = getArrayMax(arr);
+        console.log(re);
+
+        // return 终止函数，只能返回一个值
+
+        //函数没有return，返回值是undefined
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

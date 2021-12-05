@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 全局作用域：整个script标签，或者是一个单独的js文件
+        // 局部作用域：在函数内部起效果
+        //只要有代码，就至少有一个作用域
+        //es6新增块级作用域
+
+        // 作用域链 ：内部函数访问外部函数的变量，采取的是链式访问来决定取哪个值,就近原则
+        var num = 10;
+
+        function fn() {   //外部函数
+
+            var num = 20;
+
+            function fun() {  //内部函数
+                console.log(num);
+            }
+            fun();
+        }
+        fn();
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fn() {
+            console.log(arguments); //arguments存储了所有传递过来的实参
+            console.log(arguments.length);
+            console.log(arguments[2]);
+            //可以按照数组的方式遍历arguments
+            //只有函数有argumens对象，且每个函数都内置了arguments
+            for (var i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+        // fn(1, 2, 3);
+        //伪数组 ，并不是真正意义上的数组
+        // 具有length属性,按照索引的方式进行存储
+
+        //利用函数求任意个数的最大值
+        function max(arguments) {
+            var max = arguments[0];
+            for (var i = 0; i < arguments.length; i++) {
+                if (max < arguments[i]) {
+                    max = arguments[i];
+                }
+            }
+            return max;
+        }
+        var arr = [100, 2, 6, 9, 20]
+        console.log(max(arr));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

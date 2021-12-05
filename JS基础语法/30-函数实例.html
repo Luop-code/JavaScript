@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function reverse(arr) {
+            var newArr = [];
+            for (var i = arr.length - 1; i >= 0; i--) {
+                newArr[newArr.length] = arr[i];
+            }
+            return newArr;
+        }
+        // var arr1 = reverse([1, 3, 5, 7, 9]);
+        // console.log(arr1);
+        // var arr2 = reverse(['red', 'blue', 'green'])
+        // console.log(arr2);
+
+        // 函数冒泡排序
+        function sort(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - i - 1; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var tmp = 0;
+                        tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+
+                    }
+                }
+            }
+            return arr;
+        }
+        // var arr = [1, 3, 9, 5, 2, 1, 7, 0]
+        // re = sort(arr)
+        // console.log(re);
+
+        function year(year) {
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                return '' + year + '是闰年，2月份有29天'
+            }
+            else {
+                return '' + year + '是平年，2月份有28天'
+            }
+        }
+        console.log(year(2000));
+
+
+        //另一种方式声明函数：函数表达式  ,匿名函数
+        // var 变量名 = function () { }
+        var fun = function () {
+            // fun是变量名，不是函数名
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

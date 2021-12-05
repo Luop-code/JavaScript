@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // js引擎运行js分两步：1.预解析  2.代码执行
+        // 预解析：js引擎会把js里所有的 var 和 function 提升到当前作用域的最前面
+        // 代码执行：按照顺序从上往下执行 
+
+        // 预解析分为 变量提升 和 函数提升 
+
+        // 1.变量提升：把所有的变量声明提升到当前作用域最前面，不提示赋值操作
+        // console.log(num); //undefined
+        // var num = 10;
+        //相当于执行了以下代码
+        // var num;
+        // console.log(num);
+        // num = 10;
+
+
+        //这里是变量提升，这里赋值的函数表达式不能函数提升
+        /*         fun();
+                var fun = function () {
+                    console.log(10);
+                } */
+        //相当于执行了以下操作
+        // var fun;
+        // fun();
+        /*       fun = function () {
+                  console.log(10);
+              }
+       */
+
+        //函数提升：把所有函数声明提升到作用域最前面，但不调用函数
+
+
+
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+
+        //执行以下代码
+        function f1() {
+            var a = b = c = 9;
+            //这一步相当于  var a=9; b = 9; c = 9 , b和c没有var声明就是全局变量
+
+
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a); //这一步报错 ，a在外部未定义
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
