@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.修改length长度
+        /*         var arr = ['red', 'green', 'blue', 'pink'];
+                console.log(arr.length);
+                arr.length = 5;
+                console.log(arr);
+                console.log(arr[4]);
+         */
+        // 2.修改索引号,追加元素，也可以替换
+        /*     var arr = ['red', 'green', 'blue'];
+            arr[3] = 'pink';
+            console.log(arr); */
+
+        // 不要直接给数组名赋值，否则原先的数组元素没有了
+
+        /*        var arr = [];
+               for (var i = 0; i < 100; i++) {
+                   arr[i] = i + 1;
+               }
+               console.log(arr); */
+
+        /*         var arr1 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+                var arr2 = [];
+                var j = 0;
+                for (var i = 0; i < arr1.length; i++) {
+                    if (arr1[i] >= 10) {
+                        // 新数组应该从0开始
+                        arr2[j] = arr1[i];
+                        j++;
+                    }
+                }
+                console.log(arr2); */
+
+
+        /*         var arr1 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+                var arr2 = [];
+        
+                for (var i = 0; i < arr1.length; i++) {
+                    if (arr1[i] >= 10) {
+                        // 刚开始arr2的长度是0 ，使用length自动检测数组长度变化
+                        arr2[arr2.length] = arr1[i];
+                    }
+                }
+                console.log(arr2); */
+
+        /*         var arr1 = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+                var arr2 = [];
+                for (var i = 0; i < arr1.length; i++) {
+                    if (arr1[i] == 0) {
+                        continue;
+                    }
+                    arr2[arr2.length] = arr1[i];
+                }
+                console.log(arr2);
+         */
+        var arr1 = ['red', 'green', 'blue', 'pink', 'purple'];
+        var arr2 = [];
+        for (var i = arr1.length - 1; i >= 0; i--) {
+            arr2[arr2.length] = arr1[i];
+        }
+        console.log(arr2);
+    </script>
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

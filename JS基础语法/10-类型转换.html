@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 数字转字符串
+        var num = 10;
+        // 1-  toString
+        var str = num.toString();
+        console.log(typeof str)
+        // 2-  String()
+        console.log(String(num));
+        // 3-  + 拼接字符串
+        console.log(num + '');
+
+        //转换为数字类型
+        // 1. parseInt转换整数数字型
+        console.log(parseInt('3.14'));
+        console.log(parseInt('120px'));//去掉px单位
+
+        // 2. parseFloat转换浮点型
+        console.log(parseFloat('3.14'));
+
+        // 3. 强制转换 Number()
+        console.log(Number('3.14'));
+
+        // 4. 利用算术运算， - * / 隐式转换  (注意：+ 是拼接字符串)
+        console.log('12' - 0);
+
+
+        //转换为布尔型 Boolean
+        // 代表空、否定的值转换为false
+        console.log(Boolean(''));
+        console.log(Boolean(0));
+        console.log(Boolean(NaN));
+        console.log(Boolean(null));
+        console.log(Boolean(undefined));
+
+        // 其余都是true
+        console.log(Boolean('123'));
+
+
+
+
+
+
+        var a = prompt('请输入：')
+        var b = prompt('请输入：')
+        // var c = parseInt(a) + parseInt(b)
+        var c = a - -b
+        alert(c)
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
