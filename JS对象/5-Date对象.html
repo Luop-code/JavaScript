@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Date() 日期对象 是一个 构造函数 ，必须用new 来调用 
+
+        /*         var date = new Date();  //没有参数 返回当前系统的当前时间
+                console.log(date);
+                var date1 = new Date(2021, 12, 06)
+                console.log(date1);
+        
+        
+                var date2 = new Date('2021-12-6')
+                console.log(date2); */
+
+        var date = new Date();
+        /*         console.log(date.getFullYear());
+                console.log(date.getMonth() + 1); //返回的月份 要小一个月
+                console.log(date.getDate());
+                console.log(date.getDay());  // 周日返回0 */
+        // 2021年12月6日星期一
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var dates = date.getDate();
+        var day = date.getDay()
+        console.log('今天是：' + year + '年' + month + '月' + dates + '日 星期' + day + '');
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

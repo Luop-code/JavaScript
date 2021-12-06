@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 内置对象
+        // Math 对象不是构造函数 ，不需要new
+        /*         console.log(Math.PI);
+                console.log(Math.max(1, 2, 3, 99));
+                console.log(Math.max(1,2,'hello'));//有非数字 ，返回NaN
+                console.log(Math.max()); // - Infinity */
+
+
+        //封装自己创建的对象
+        /*         var myMath = {
+                    PI: 3.141592653,
+                    max: function () {
+                        var max = arguments[0];
+                        for (var i = 1; i < arguments.length; i++) {
+                            if (arguments[i] > max) {
+                                max = arguments[i];
+                            }
+                        }
+                        return max;
+                    },
+                    min: function () {
+                        var min = arguments[0];
+                        for (var i = 1; i < arguments.length; i++) {
+                            if (arguments[i] < min) {
+                                min = arguments[i];
+                            }
+                        }
+                        return min;
+                    }
+                }
+                console.log(myMath.PI); */
+
+
+        //绝对值
+        console.log(Math.abs(-1));
+
+        console.log(Math.abs('-1'));//隐式转换，会把字符串型-1转换为数字型
+        console.log(Math.abs('hello'));//NaN
+
+        //取整
+
+        console.log(Math.floor(1.9));  //向下取整
+        console.log(Math.ceil(1.1));   //向上取整
+        console.log(Math.round(1.5));  //四舍五入
+        console.log(Math.round(-1.5));
+
+        //随机数 Math.random  返回一个随机小数  [0,1)   
+        //无参数
+        console.log(Math.random());
+
+        //要得到两个数之间的随机整数，闭区间
+        //公式 Math.floor(Math.random() * (max - min +1 )) + min 
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        console.log(getRandom(1, 10));
+
+        //随机点名
+        var arr = ['张三', '李四', '王五', '赵六', '柠七'];
+        console.log(arr[getRandom(0, arr.length - 1)]);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
