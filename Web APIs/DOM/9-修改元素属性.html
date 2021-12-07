@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="sun">孙尚香</button>
+    <button id="sun1">孙大小姐</button>
+    <img src="../../../CSS/images/sunshangxiang.jpg" alt="" title="孙大小姐">
+    <script>
+        //获取元素 
+        var sun = document.getElementById('sun');
+        var sun1 = document.getElementById('sun1');
+        var img = document.querySelector('img');
+
+        //注册事件 处理程序
+        sun.onclick = function () {
+            img.src = '../../../CSS/images/sundaxiaojie.jpg';
+            img.title = '孙尚香'
+        }
+        sun1.onclick = function () {
+            img.src = '../../../CSS/images/sunshangxiang.jpg'
+            img.title = '孙大小姐'
+        }
+    </script>
+</body>
+
+</html>
