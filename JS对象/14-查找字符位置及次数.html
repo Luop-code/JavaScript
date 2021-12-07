@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var str = 'abcoefoxyozzopp';
+        var index = str.indexOf('o');
+        var count = 0;
+        console.log(index);
+        while (index !== -1) {
+            console.log(index);
+            count++;
+            index = str.indexOf('o', index + 1);
+        }
+        console.log(count);
+        // 翻译：生存还是毁灭？这是个问题。（莎士比亚《哈姆雷特》）
+        /*       var str = 'To be, or not to be, that is the question.';
+              var count = 0;
+              var pos = str.indexOf('e');
+      
+              while (pos !== -1) {
+                  count++;
+                  pos = str.indexOf('e', pos + 1);
+              }
+      
+              console.log(count); // displays 4 */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
