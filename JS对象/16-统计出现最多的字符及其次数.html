@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*         var o = {
+                    age: 0
+        
+                }
+                if (o['age'] != undefined) {
+                    console.log('有该属性');
+                } else {
+                    console.log('没有该属性');
+                } */
+
+        var str = 'abcoefoxyozzopp';
+        var o = {};
+        for (var i = 0; i < str.length; i++) {
+            var chars = str.charAt(i);
+            if (o[chars] != undefined) {
+                o[chars]++;
+            } else {
+                o[chars] = 1;
+            }
+        }
+        console.log(o);
+        var max = 0;
+        var ch = ''
+        for (var k in o) {
+            if (o[k] > max) {
+                max = o[k];
+                ch = k;
+            }
+        }
+        console.log(ch);
+        console.log(max);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -30,6 +30,50 @@
         var day = date.getDay()
         console.log('今天是：' + year + '年' + month + '月' + dates + '日 星期' + day + '');
 
+        console.log(date.getHours());
+        console.log(date.getMinutes());
+        console.log(date.getSeconds());
+
+        function getTime() {
+            var time = new Date();
+            var h = time.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = time.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = time.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return h + ':' + m + ':' + s;
+        }
+        console.log(getTime());
+
+
+        // 获得Date总的毫秒数(时间戳)，  距离1970.1.1过了多久
+        // valueOf() getTime()
+        var date = new Date();
+        console.log(date.valueOf());//当前时间距离1970.1.1总的毫秒数
+        console.log(date.getTime());
+
+        // 简单的写法
+        var date1 = +new Date() // +newDate()返回的就是总的毫秒数
+        console.log(date1);
+
+        // H5新增 写法
+        console.log(Date.now());
+
+
+        // 倒计时
+        function countDown(time) {
+            var nowTime = +new Date();
+            var inputTime = +new Date(time); //返回的是用户输入时间总的毫秒数
+            var times = (inputTime - nowTime) / 1000;  //times就是剩余时间  单位换算成秒
+            var day = parseInt(times / 60 / 60 / 24);
+            var hour = parseInt(times / 60 / 60 % 24);
+            var min = parseInt(times / 60 % 60);
+            var sec = parseInt(times % 60);
+            return day + '天' + hour + '时' + min + '分' + sec + '秒';
+        }
+        console.log(countDown('2021-12-8'));
+
 
 
 
