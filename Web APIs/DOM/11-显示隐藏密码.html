@@ -36,10 +36,20 @@
         <input type="password" name="" id="pwd">
     </div>
     <script>
-        var btn = document.getElementsById('btn');
-        var pwd = document.getElementsById('pwd')
+        var btn = document.getElementById('btn');
+        var pwd = document.getElementById('pwd')
+        var flag = 0;
         btn.onclick = function () {
-            pwd.type = 'text'
+
+            if (flag == 0) {
+                pwd.type = 'text';
+                flag = 1;
+            }
+            else {
+                pwd.type = 'password';
+                flag = 0;
+            }
+
         }
     </script>
 </body>
