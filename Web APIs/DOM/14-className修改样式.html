@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .change {
+            background-color: skyblue;
+            color: #fff;
+            font-size: 25px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="first">文本</div>
+    <script>
+        var test = document.querySelector('div');
+        test.onclick = function () {
+            // this.style.backgroundColor = 'skyblue';
+            // this.style.color = '#fff';
+            // this.style.fontSize = '25px';
+            // this.style.marginTop = '100px';
+
+            // this.className = 'change';
+            // className是直接覆盖原先的类名
+            //要想保留原类名，可以这样做  多类名选择器
+            this.className = 'first change';
+        }
+    </script>
+</body>
+
+</html>
