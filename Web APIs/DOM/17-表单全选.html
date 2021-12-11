@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            text-align: center;
+            padding: auto;
+            width: 500px;
+            /* border: 1px solid #ccc; */
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table cellpadding='20' cellspacing='0' border="1">
+            <thead>
+                <tr>
+                    <td><input type="checkbox" id="all"></td>
+                    <td>商品</td>
+                    <td>价格</td>
+                </tr>
+
+            </thead>
+            <tbody id="tb">
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>iphone12</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>ipadpro</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>ipad air</td>
+                    <td>3000</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>apple watch</td>
+                    <td>2000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        //全选和取消全选
+        var all = document.getElementById('all');
+        var tb = document.getElementById('tb').getElementsByTagName('input')
+        console.log(tb);
+        // console.log(tb[i] = 'checked');
+        all.onclick = function () {
+            console.log(this.checked);
+            for (var i = 0; i < tb.length; i++); {
+                tb[i].checked = this.checked
+            }
+        }
+
+
+
+        for (var i = 0; i < tb.length; i++) {
+            tb[i].onclick = function () {
+                var flag = true;
+                for (var i = 0; i < tb.length; i++) {
+                    if (!tb[i].checked) {
+                        flag = false
+                        break;
+                    }
+                }
+                all.checked = false;
+            }
+        }
+
+    </script>
+</body>
+
+
+</html>
