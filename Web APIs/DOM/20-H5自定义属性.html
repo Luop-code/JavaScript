@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div getTime="20" data-index="2"></div>
+    <!-- H5规定自定义属性 由 date- 开头 -->
+    <script>
+        var div = document.querySelector('div');
+        // console.log(div.getTime);
+        console.log(div.getAttribute('getTime'));
+        console.log(div.getAttribute('data-index'));
+        div.setAttribute('date-time', '20')
+
+        // dataset是一个集合，里面存了所有以data开头的自定义属性
+        console.log(div.dataset.index);
+    </script>
+</body>
+
+</html>
