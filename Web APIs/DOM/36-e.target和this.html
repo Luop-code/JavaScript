@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <ul>
+        <li>abc</li>
+        <li>abc</li>
+        <li>abc</li>
+    </ul>
+    <script>
+        // 1.e.target返回的是触发事件的对象(元素) ,this返回的是绑定事件的对象
+
+        var div = document.querySelector('div');
+        div.addEventListener('click', function (e) {
+            console.log(e.target);
+            console.log(this);
+        })
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // 给ul绑定了事件，那么this就指向ul
+            console.log(this);
+            console.log(e.currentTarget);
+            //e.target指向我们点击的对象，我们点击的是li，则指向li
+            console.log(e.target);
+        })
+    </script>
+</body>
+
+</html>

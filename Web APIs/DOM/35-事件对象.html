@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <script>
+        var div = document.querySelector('div');
+        /*    div.onclick = function (event) {
+                  console.log(event);
+              } */
+        div.addEventListener('click', function (event) {
+            console.log(event);
+        })
+// 1.event就是一个事件对象，写到函数的括号里 ，当形参看
+// 2.事件对象只有有了事件才会存在，它是系统自动创建的，不需要传参
+// 3.事件对象是我们事件的一系列相关数据的集合，比如鼠标点击，里面包含了鼠标的相关信息（鼠标坐标等）
+// 4.这个事件对象可以自己命名  e
+    </script>
+</body>
+
+</html>
