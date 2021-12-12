@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 原理：不给每个子节点单独设置事件监听器，而是事件监听器设置在父节点上，利用其冒泡原理影响设置子节点 -->
+    <ul>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+        <li>hello world</li>
+    </ul>
+    <script>
+        var ul = document.querySelector('ul');
+        ul.addEventListener('click', function (e) {
+            // alert('hello')
+            e.target.style.backgroundColor = 'skyblue'
+        })
+    </script>
+</body>
+
+</html>

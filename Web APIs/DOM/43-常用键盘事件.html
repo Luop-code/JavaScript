@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.keyup 按键弹起触发
+        // document.onkeyup = function () {
+        //     console.log('弹起了');
+        // }
+
+        document.addEventListener('keyup', function () {
+            console.log('弹起了');
+        })
+
+        //keypress 不识别功能键，如shift，ctrl等 
+        //keydown最先执行，keypress ，keyup
+        document.addEventListener('keydown', function () {
+            console.log('按下了down');
+        })
+
+        document.addEventListener('keypress', function () {
+            console.log('按下了press');
+        })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>123</div>
+    <a href="http://www.baidu.com">百度</a>
+    <form action="http://www.baidu.com">
+        <input type="submit" value="提交" name="sub">
+    </form>
+    <script>
+        //返回事件类型
+        var div = document.querySelector('div');
+        div.addEventListener('click', fn)
+        div.addEventListener('mouseover', fn)
+        div.addEventListener('mouseout', fn)
+        function fn(e) {
+            console.log(e.type);
+        }
+
+        //阻止默认行为，让链接不跳转
+        var a = document.querySelector('a');
+        a.addEventListener('click', function (e) {
+            e.preventDefault() // DOM标准
+        })
+        //传统方式
+        /*         a.onclick = function () {
+                     e.preventDefault
+                    return false;
+                } */
+    </script>
+</body>
+
+</html>

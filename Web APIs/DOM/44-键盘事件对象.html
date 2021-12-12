@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // keyCode返回按键的ASCII码，已过时
+        document.addEventListener('keyup', function (e) {
+            console.log(e.key);
+            // console.log(e.code);
+
+            //keypress区分大小写，但是直接用e.key区分大小写
+        })
+    </script>
+</body>
+
+</html>
