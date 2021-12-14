@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+        }
+
+        span {
+            float: left;
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            color: white;
+            line-height: 100px;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="hour">1</span>
+        <span class="minute">2</span>
+        <span class="second">3</span>
+    </div>
+    <script>
+        var hour = document.querySelector('.hour');
+        var minute = document.querySelector('.minute');
+        var second = document.querySelector('.second');
+        var inputTime = +new Date('2021-12-14 ');
+        countDown();//先调用一次，防止第一次刷新页面有空白
+        setInterval(countDown, 1000);
+        function countDown() {
+            var nowTime = +new Date();
+
+            var times = (inputTime - nowTime) / 1000;  //times就是剩余时间  单位换算成秒
+            // var day = parseInt(times / 60 / 60 / 24);
+            var h = parseInt(times / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hour.innerHTML = h;
+            var m = parseInt(times / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minute.innerHTML = m;
+            var s = parseInt(times % 60);
+            s = s < 10 ? '0' + s : s;
+            second.innerHTML = s;
+            // return day + '天' + hour + '时' + min + '分' + sec + '秒';
+        }
+        // console.log(countDown('2021-12-8'));
+
+
+    </script>
+</body>
+
+</html>
