@@ -21,6 +21,15 @@
             background-color: skyblue;
             margin: 25%
         }
+
+        .w {
+            /* width: 200px; */
+            height: 200px;
+            background-color: red;
+            margin: 0 auto 200px;
+            padding: 10px;
+            border: 15px solid red;
+        }
     </style>
 </head>
 
@@ -28,15 +37,24 @@
     <div class="father">
         <div class="son"></div>
     </div>
+    <div class="w"></div>
     <script>
         //offset
         var father = document.querySelector('.father');
         var son = document.querySelector('.son');
+        var w = document.querySelector('.w');
         console.log(father);
         //可以得到元素的偏移，位置，返回不带单位的数值
         console.log(father.offsetLeft);
         //返回元素相对于带有定位的父元素的左边框的位移,如果没有定位，以body为准
         console.log(son.offsetLeft);
+
+        // 包含padding，border，width
+        console.log(w.offsetWidth);
+        console.log(w.offsetHeight);
+
+        //返回带有定位的父亲 否则返回的是body
+        console.log(son.offsetParent);
     </script>
 </body>
 
