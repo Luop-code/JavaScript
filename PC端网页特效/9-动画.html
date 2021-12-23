@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: skyblue;
+        }
+
+        /* 动画必须加定位 */
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <div></div>
+    <span>hello</span>
+    <script>
+        //简单动画函数封装
+        function animate(obj, target) {
+            // 让元素只有一个定时器执行
+            clearInterval(obj.timer)
+            // 给不同元素指定不同定时器
+            obj.timer = setInterval(function () {
+                if (obj.offsetLeft >= target) {
+                    // 停止动画，本质是停止定时器
+                    clearInterval(obj.timer)
+                } else {
+                    obj.style.left = obj.offsetLeft + 5 + 'px';
+                }
+            }, 30)
+        }
+        var div = document.querySelector('div')
+        var span = document.querySelector('span')
+        var btn = document.querySelector('button')
+        animate(div, 300)
+
+        btn.addEventListener('click', function () {
+            // 不断点击按钮，会运动的越来越快，因为每点击一次就开启定时器
+            animate(span, 400)
+        })
+
+    </script>
+</body>
+
+</html>

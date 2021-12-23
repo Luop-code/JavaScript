@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            padding: 10px;
+            border: 10px solid red;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+        hello world
+
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        // 返回自身实际的高度，不含边框，包含padding，不带单位
+        console.log(div.scrollHeight);
+        console.log(div.clientHeight);
+        // 滚动事件，滚动条发送变化触发
+        div.addEventListener('scroll', function () {
+            console.log(div.scrollTop);
+        })
+    </script>
+</body>
+
+</html>
