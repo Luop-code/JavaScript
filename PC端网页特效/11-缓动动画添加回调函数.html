@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        span {
+            position: absolute;
+            left: 0;
+            top: 200px;
+            display: block;
+            width: 150px;
+            height: 150px;
+            background-color: skyblue;
+        }
+
+        /* 动画必须加定位 */
+    </style>
+</head>
+
+<body>
+    <button class="btn800">800</button>
+    <button class="btn500">500</button>
+    <div></div>
+    <span>hello</span>
+    <script>
+        //简单动画函数封装
+        function animate(obj, target, callback) {
+            console.log(callback);
+            // 让元素只有一个定时器执行
+            clearInterval(obj.timer)
+            // 给不同元素指定不同定时器
+            obj.timer = setInterval(function () {
+                // 步长值写在定时器里面
+                // 把步长值改为整数
+                // var step = Math.ceil((target - obj.offsetLeft) / 10)
+
+                var step = (target - obj.offsetLeft) / 10
+                step = step > 0 ? Math.ceil(step) : Math.floor(step)
+                if (obj.offsetLeft == target) {
+                    // 停止动画，本质是停止定时器
+                    clearInterval(obj.timer)
+                    // 回调函数写在定时器里面
+                    if (callback) {
+                        callback()
+                    }
+                } else {
+                    // 每次的距离慢慢变小 （目标位置-当前位置）/ 10
+                    obj.style.left = obj.offsetLeft + step + 'px';
+                }
+            }, 30)
+        }
+        var div = document.querySelector('div')
+        var span = document.querySelector('span')
+        var btn500 = document.querySelector('.btn500')
+        var btn800 = document.querySelector('.btn800')
+        animate(div, 300)
+
+        btn500.addEventListener('click', function () {
+            // 不断点击按钮，会运动的越来越快，因为每点击一次就开启定时器
+            animate(span, 500)
+        })
+        btn800.addEventListener('click', function () {
+
+            animate(span, 800, function () {
+                // alert('hello')
+                span.style.backgroundColor = 'red'
+            })
+        })
+
+    </script>
+</body>
+
+</html>
