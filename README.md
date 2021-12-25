@@ -1,2 +1,2 @@
 # JavaScript
-JS基础，DOM,BOM
+JS基础语法，DOM,BOM等
