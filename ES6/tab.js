@@ -85,8 +85,8 @@ class Tab {
         var input = this.children[0];
         input.value = str;
         input.select();//文本框的文字处于选定状态
-        // 离开文本框，把里面的值给span
 
+        // 离开文本框，把里面的值给span
         input.onblur = function () {
             this.parentNode.innerHTML = this.value;
         }
@@ -99,4 +99,5 @@ class Tab {
         }
     }
 }
+
 new Tab('#tab');

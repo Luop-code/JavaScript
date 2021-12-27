@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 构造函数存在浪费内存的问题 -->
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+
+        }
+        // 将方法添加到原型对象,共享方法
+        Star.prototype.sing = function () {
+            console.log('sing');
+        }
+        var ldh = new Star('刘德华', 18);
+        var zxy = new Star('张学友', 18);
+        console.log(ldh.sing === zxy.sing);
+        // console.dir(Star)
+        ldh.sing();
+        zxy.sing();
+// 一般公共属性定义在构造函数里，公共方法放到原型对象
+    </script>
+</body>
+
+</html>
