@@ -34,21 +34,26 @@
 
         // 1-forEach遍历每一个对象
         function getID(json, id) {
+            var o = {};
             json.forEach(function (item) {
                 // console.log(item);
                 if (item.id == id) {
-                    console.log(item);
+                    o = item;
+                    // console.log(item);
 
                     // 想要得到里层的数据,递归
                     // 里面应该有goods数组，且长度不为0
                 } else if (item.goods && item.goods.length > 0) {
-                    getID(item.goods, id);
+                    o = getID(item.goods, id);
                 }
             })
+            return o;
         }
-        getID(data, 1);
-        getID(data, 2);
-        getID(data, 11);
+        console.log(getID(data, 1));
+        console.log(getID(data, 2));
+        console.log(getID(data, 111));
+        console.log(getID(data, 112));
+
     </script>
 </body>
 
