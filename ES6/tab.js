@@ -1,8 +1,8 @@
-var that;
+// var that;
 class Tab {
     constructor(id) {
         // 获取元素
-        that = this;
+        // that = this;
         this.main = document.querySelector(id);
 
         this.add = this.main.querySelector('.tabadd');
@@ -14,11 +14,11 @@ class Tab {
     init() {
         this.updateNode();
         // 初始化，让相关元素绑定事件
-        this.add.onclick = this.addTab;
+        this.add.onclick = this.addTab.bind(this.add, this);;
         for (var i = 0; i < this.lis.length; i++) {
             this.lis[i].index = i;
-            this.lis[i].onclick = this.tonggleTab;
-            this.remove[i].onclick = this.removeTab;
+            this.lis[i].onclick = this.tonggleTab.bind(this.lis[i], this);
+            this.remove[i].onclick = this.removeTab.bind(this.remove[i], this);
             this.spans[i].ondblclick = this.editTab;
             this.sections[i].ondblclick = this.editTab;
         }
@@ -31,11 +31,11 @@ class Tab {
         this.spans = this.main.querySelectorAll('.fisrstnav li span:first-child');
     }
     // 1-切换功能
-    tonggleTab() {
+    tonggleTab(this) {
         // console.log(this.index);
-        that.clearClass();
+        this.clearClass();
         this.className = 'liactive';
-        that.sections[this.index].className = 'conactive'
+        this.sections[this.index].className = 'conactive'
     }
     clearClass() {
         for (var i = 0; i < this.lis.length; i++) {
@@ -44,7 +44,7 @@ class Tab {
         }
     }
     // 2-添加功能
-    addTab() {
+    addTab(that) {
         that.clearClass();
         // 创建li，section元素，追加到父元素
         var random = Math.random();
@@ -55,7 +55,7 @@ class Tab {
         that.init();
     }
     // 3-删除功能
-    removeTab(e) {
+    removeTab(that, e) {
         e.stopPropagation();//阻止冒泡，防止触发li的切换点击事件
         var index = this.parentNode.index;
         console.log(index);
