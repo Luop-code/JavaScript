@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const与let基本相同，但它声明变量是必须同时初始化变量，且不能修改其声明的变量
+        // const声明的限制只使用于它指向的变量的引用
+        // 如果const变量引用的是一个对象，那么修改这个对象内部属性不违反const的限制
+        const person = {};
+        person.name = 'Matt'
+        console.log(person);
+
+        // JS引擎会为for循环中的let声明分别创建独立的变量实例，但不能用const声明迭代变量，因为迭代变量会自增
+        // for (const i = 0; i < 5; ++i) { // error 给常量赋值
+        //     console.log(i);
+        // }
+
+        // 不过可以用const声明一个不会被修改的for循环变量，也就是说每次迭代只是创建一个新变量
+        let i = 0;
+        for (const j = 7; i < 5; i++) {
+            console.log(j);
+        }
+        for (const key in { a: 1, b: 2 }) {
+            console.log(key);
+        }
+        for (const value of [1, 2, 3, 4, 5]) {
+            console.log(value);
+        }
+    </script>
+</body>
+
+</html>
