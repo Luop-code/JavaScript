@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var reg = /^abc{3}$/;  //只是让c重复3次
+        // console.log(reg.test('abccc'));
+        // console.log(reg.test('abc'));
+        // console.log(reg.test('abcabc'));
+
+        // 小括号表优先级
+        var reg = /^(abc){3}$/;  //abc重复3次
+        console.log(reg.test('abccc'));
+        console.log(reg.test('abc'));
+        console.log(reg.test('aaabbbccc'));
+
+        console.log(reg.test('abcabcabc'));//true
+    </script>
+</body>
+
+</html>

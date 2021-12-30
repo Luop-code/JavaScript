@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1 - call 改变
+        var o = {
+            name: 'andy',
+
+        }
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+        };
+        fn.call(o, 1, 2);
+        // call的主要作用可以实现继承
+        function Father(uname, age, sex) {
+            this.uname = uname;
+            this.age = age;
+            this.sex = sex;
+        }
+        function Son(uname, age, sex) {
+            Father.call(this, uname, age, sex);
+        }
+        var son = new Son('刘德华', 18, '男')
+        console.log(son);
+
+        console.log('--------------');
+
+        // 2-apply(),也是调用函数，改变this指向，但是参数必须是数组（伪数组）
+        var o = {
+            name: 'andy',
+
+        }
+        function fn(arr) {
+            console.log(this);
+            // 打印出的是字符串，不是数组
+            console.log(arr);
+        };
+        fn.apply(o, ['pink']);
+
+        // apply主要应用 ,借助于数学内置对象求最大值
+
+        var arr = [1, 66, 3, 99, 4]
+        var max = Math.max.apply(Math, arr);
+        var min = Math.min.apply(Math, arr);
+        console.log(max);
+        console.log(min);
+
+        console.log('---------------');
+
+        // 3-bind(),不会调用函数，但能改变函数内部this指向,返回由指定的this值和初始化参数改造的原函数拷贝
+        var o = {
+            name: 'andy',
+        }
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+        };
+        // 返回原函数改变this后的函数
+        var f = fn.bind(o, 1, 2);
+        f();
+
+
+    </script>
+</body>
+
+</html>

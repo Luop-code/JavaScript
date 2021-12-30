@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>榴莲</li>
+        <li>臭豆腐</li>
+        <li>鲱鱼罐头</li>
+        <li>大猪蹄子</li>
+    </ul>
+    <script>
+        var lis = document.querySelector('.nav').querySelectorAll('li');
+        // 1-利用动态添加属性的方式
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].index = i;
+        //     lis[i].onclick = function () {
+        //         // console.log(i);
+        //         console.log(this.index);
+        //     }
+        // }
+
+
+        // 2-闭包
+        // for (var i = 0; i < lis.length; i++) {
+        // 利用for循环创建了4个立即执行函数
+        // 立即执行函数也称小闭包，因为立即执行函数里的任何一个函数都可以使用它的变量i
+        //     (function (i) {
+        //         // console.log(i);
+        //         lis[i].onclick = function () {
+        //             console.log(i);
+        //         }
+        //     })(i)
+        // }
+
+
+        // 3-定时器中的闭包
+        /*        for (var i = 0; i < lis.length; i++) {
+                   (function (i) {
+                       setTimeout(function () {
+                           console.log(lis[i].innerHTML);
+                       }, 3000)
+                   })(i)
+               } */
+
+
+        //    4-闭包计算打车价格
+
+        var car = (function () {
+            var start = 13;//起步价
+            var total = 0;//总价
+            return {
+                //正常的总价
+                price: function (n) {
+                    if (n <= 3) {
+                        total = start;
+                    } else {
+                        total = start + (n - 3) * 5;
+                    }
+                    return total;
+                },
+                //拥堵后的费用
+                yd: function (flag) {
+                    return flag ? total + 10 : total;
+                }
+            }
+        })()
+        console.log(car.price(5));
+        console.log(car.yd(true));
+    </script>
+</body>
+
+</html>

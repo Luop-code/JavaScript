@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Father {
+            say() {
+                console.log('hello');
+                return '我是爸爸';
+
+            }
+        }
+        class Son extends Father {
+
+            // （类似方法重写），继承中，先执行子类的方法，若果没有，就去查找父类有没有该方法，
+            say() {
+                console.log('我是儿子');
+                console.log(super.say() + '的儿子');
+            }
+        }
+        var son = new Son()
+        son.say();
+    </script>
+</body>
+
+</html>
