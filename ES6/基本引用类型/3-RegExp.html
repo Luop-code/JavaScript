@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES通过RegExp支持正则表达式
+        /*         g: 全局模式，表示查找字符串的全部内容，而不是找到第一个匹配的内容就结束
+                i:不区分大小写，表示在查找匹配时忽略pattern和字符串的大小写
+                m:多行模式，表示查找到一行文本末尾时会继续查找
+                y:粘附模式，表示只查找从lastIndex开始及之后的字符串
+                u:Unicode模式，启用Unicode匹配
+                s:dotAll模式，表示元字符，匹配任何字符（包括\n\r) */
+
+        // 匹配字符串中的所有'at'
+        let str1 = /at/g;
+
+        // 匹配第一个'bat' 或'cat'
+        let str2 = /[bc]at/i;
+
+    </script>
+</body>
+
+</html>

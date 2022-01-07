@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let now = new Date();
+        console.log(now);
+        // 不给Date构造函数传参时，创建的对象将保存当前日期和时间
+        // 要基于其他日期和时间创建日期对象，必须传入其毫秒表示
+        // Date.parse(),Date.UTC()
+        // Date.now();
+
+        console.log(now.toUTCString());
+    </script>
+</body>
+
+</html>
