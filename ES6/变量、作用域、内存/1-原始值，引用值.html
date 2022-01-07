@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES变量可以包含两种不同类型的数据：原始值和引用值
+        // 原始值就是最简单的数据，引用值则是由多个值构成的对象
+        // 保存原始值的变量是按值访问，保存引用值的变量是按引用访问
+
+        // 对于引用值，可以随时添加、修改、删除其属性和方法
+        let person = new Object();
+        person.name = 'luo';
+        console.log(person.name);
+
+        // 而原始值不能有属性，尽管给其添加属性不会报错
+        let name = 'luo';
+        name.age = 21;
+        console.log(name.age);  //undefined
+
+        console.log('------------------');
+
+        // 原始值的复制值
+        let num1 = 5;
+        let num2 = num1;
+        // 这里两个值是完全独立的，num2是num1的副本，两个变量可以独立使用，互不干扰
+
+        // 引用值的复制值
+        let obj1 = new Object();
+        let obj2 = obj1;
+        obj1.name = 'luo';
+        console.log(obj2.name);
+        // 这里复制的值实际上是一个指针，它指向存储在堆内存中的对象。实际上两个变量指向同一个对象，因此
+        // 一个对象的变化会在另一个对象上反映出来
+        console.log('----------');
+
+
+    </script>
+</body>
+
+</html>

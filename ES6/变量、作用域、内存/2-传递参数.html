@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES中所有函数的参数都是按值传递的
+
+        function addTen(num) {
+            num += 10;
+            return num;
+        }
+        let count = 20;
+        let result = addTen(count);
+        console.log(count);
+        console.log(result);
+        console.log('-------------');
+        // 参数num和count互不干扰
+
+
+        /*    function setName(obj) {
+               obj.name = 'luo';
+           }
+           let person = new Object();
+           setName(person);
+           console.log(person.name);
+           console.log('-----------'); */
+        // 这里在函数内部，obj和person指向同一个对象，结果就是，即使对象时按值传进函数的，obj也会通过引用访问对象
+        // 在局部作用域中修改对象而变化反映到全局时，并不意味着参数是按引用传递的
+
+        function setName(obj) {
+            obj.name = 'luo';
+            obj = new Object();
+            obj.name = 'peng'
+        }
+        let person = new Object();
+        setName(person);
+        console.log(person.name);
+// 如果person是按引用传递的，那么person应该自动将指针改为name为'peng'的对象，但是不然
+// 这表明函数中参数的改变之后，原始的引用仍然没变，当obj在函数内部被重写后，它变成了一个指向本地对象的指针
+// 而那个本地对象在函数执行结束后就被销毁了
+    </script>
+</body>
+
+</html>
