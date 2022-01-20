@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    arguments是一个类数组对象，包含调用函数时传入的所有参数，这个对象只有以function关键字定义函数才会有
+    arguments对象还有一个callee属性，是一个指向arguments对象所在函数的指针
+    <script>
+        /*    function factorial(num) {
+               if (num <= 1) {
+                   return 1;
+               } else {
+                   return num * factorial(num - 1);
+               }
+           } */
+        function factorial(num) {
+            if (num <= 1) {
+                return 1;
+            } else {
+                return num * arguments.callee(num - 1);
+            }
+        }
+        let trueFactorial = factorial;
+        factorial = function () {
+            return 0;
+        }
+        console.log(trueFactorial(5));
+        console.log(factorial(5));
+    </script>
+</body>
+
+</html>

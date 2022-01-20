@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // ES6支持显示定义默认参数，只需在参数后用 = 赋默认值
+        function makeKing(name = 'henry') {
+            return `King${name}VIII`;
+        }
+        console.log(makeKing());
+        console.log(makeKing('luo'));
+        // arguments对象的值不反映参数的默认值，只反映传给函数的参数
+    </script>
+</body>
+
+</html>

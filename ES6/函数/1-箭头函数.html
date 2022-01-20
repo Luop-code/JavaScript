@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    函数实际上是对象，所以函数名就是指向函数对象的指针
+    <script>
+        // ES6新增的使用胖箭头 （ =>  ）定义函数，任何可以使用函数表达式的地方，都可以用箭头函数
+        let sum = (num1, num2) => {
+            return num1 + num2;
+        };
+
+        let arrowSum = (a, b) => {
+            return a + b;
+        };
+        console.log(arrowSum(1, 2));
+        // 箭头函数不能使用arguments，super，new.target，也不能用作构造函数，没有prototype属性
+
+    </script>
+</body>
+
+</html>
