@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    箭头函数中的this会保留定义该函数时的上下文
+    <script>
+        window.color = 'red';
+        let o = {
+            color: 'blue'
+        };
+        let sayColor = () => console.log(this.color);
+        sayColor();
+        o.sayColor = sayColor;
+        o.sayColor();
+        // 函数名只是保存指针的变量。因此全局定义的sayColor函数和o.sayColor是同一个函数，只不过作用域不同
+        // 这里两次调用sayColor，this引用的都是window对象，因为这个箭头函数是在window上下文定义的
+
+        console.log('---------------');
+
+        // this引用King的实例
+        function King() {
+            this.royaltyName = 'Henry';
+            setTimeout(() => console.log(this.royaltyName), 1000);
+        }
+
+        // this引用window对象
+        function Queen() {
+            this.royaltyName = 'Elizabeth';
+            setTimeout(function () {
+                console.log(this.royaltyName);
+            }, 1000)
+        }
+        new King();
+        new Queen();
+    </script>
+</body>
+
+</html>

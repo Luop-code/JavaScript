@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    ES6新增了检测函数是否使用new关键字调用的new.target属性。如果函数是正常调用的，
+    则new.target的值是undefined，如果是用new调用的，则new.target将引用被调用的构造函数
+    <script>
+        function King() {
+            if (!new.target) {
+                throw 'King must be instantiated using "new"'
+            }
+            console.log('King instantiated using "new"');
+        }
+        new King();
+        King();
+    </script>
+</body>
+
+</html>
